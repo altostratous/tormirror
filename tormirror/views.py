@@ -1,4 +1,5 @@
 from rest_framework.response import Response
+from rest_framework.status import HTTP_429_TOO_MANY_REQUESTS
 from rest_framework.views import APIView
 
 from tormirror.serializers import RequestSerializer
@@ -17,6 +18,6 @@ class RequestView(APIView):
         response = get_ok_response(method, *args, **kwargs)
         return Response(
             data={'content': response.content.decode(errors='replace') if response else None},
-            status=response.status_code
+            status=response.status_code if response else HTTP_429_TOO_MANY_REQUESTS
         )
 
