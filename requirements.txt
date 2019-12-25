@@ -2,7 +2,7 @@ asgiref==3.2.3
 async-timeout==2.0.1
 certifi==2019.11.28
 chardet==3.0.4
-Django==2.2
+Django==2.2.8
 djangorestframework==3.11.0
 idna==2.8
 PySocks==1.7.1
