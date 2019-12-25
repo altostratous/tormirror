@@ -23,6 +23,7 @@ def get_ok_response(method, *args, retry_count=10, **kwargs):
             return response
     ok = False
     while not ok and retry_count > 0:
+        print('retry count {}'.format(retry_count))
         session = get_new_session()
         response = request_from_session(session, method, *args, **kwargs)
         if response.ok:
