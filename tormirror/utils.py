@@ -7,6 +7,7 @@ from django.core.cache import cache
 def get_new_session():
     session = requests.session()
     credentials = str(random.randint(10000, 0x7fffffff)) + ":" + "ahrefs"
+    print('trying {}'.format(credentials))
     session.proxies = {
         'http': 'socks5h://{}@localhost:{}'.format(credentials, settings.TOR_PORT),
         'https': 'socks5h://{}@localhost:{}'.format(credentials, settings.TOR_PORT)}

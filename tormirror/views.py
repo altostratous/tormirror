@@ -15,5 +15,8 @@ class RequestView(APIView):
         kwargs = serializer.validated_data['kwargs']
         method = serializer.validated_data['method']
         response = get_ok_response(method, *args, **kwargs)
-        return Response(data={'content': response.content.decode(errors='replace')}, status=response.status_code)
+        return Response(
+            data={'content': response.content.decode(errors='replace') if response else None},
+            status=response.status_code
+        )
 
