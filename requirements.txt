@@ -3,7 +3,7 @@ async-timeout==2.0.1
 certifi==2019.11.28
 chardet==3.0.4
 Django==2.2
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 idna==2.8
 PySocks==1.7.1
 pytz==2019.3
